@@ -13,7 +13,7 @@ class database:
         # Cria banco de dados caso ele não exista e faz um comunicação
         global conx, conn
         try:
-            conn = connect(f'{getcwd()}\\config\\db')
+            conn = connect(f'{getcwd()}\\config\\db.sqlite')
             conx = conn.cursor()            
             conn.execute('''
                          CREATE TABLE IF NOT EXISTS lojas (
