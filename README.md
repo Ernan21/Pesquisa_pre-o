@@ -4,7 +4,7 @@ Esta é uma automação desenvolvida para o Lemos Supermercado onde se aproveita
 
    >[!NOTE]
    >
-   >Toda pesquisa feita é salva em um local do servidor no final para fazer o lançamento em um sistema
+   >Toda pesquisa feita é salva em um local do servidor, para que no final possa ser feito o lançamento em um sistema !
 
    |Funções|
    |--|
