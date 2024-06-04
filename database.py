@@ -13,25 +13,25 @@ class database:
         # Cria banco de dados caso ele não exista e faz um comunicação
         global conx, conn
         try:
-            conn = connect(f'{getcwd()}\\config\\db.sqlite')
+            conn = connect(f'{getcwd()}\\config\\db')
             conx = conn.cursor()            
-            # conn.execute('''
-            #              CREATE TABLE IF NOT EXISTS lojas (
-            #                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-            #                  nome TEXT,
-            #                  pesquisa TEXT,
-            #                  status INT
-            #              );
-            #              ''')
-            # conn.execute('''
-            #              CREATE TABLE IF NOT EXISTS empresas (
-            #                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-            #                  nome TEXT NOT NULL,
-            #                  usuario TEXT NOT NULL,
-            #                  senha TEXT NOT NULL,
-            #                  time_wait INT NOT NULL)
-            #              ''')
-            # conn.commit()
+            conn.execute('''
+                         CREATE TABLE IF NOT EXISTS lojas (
+                             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                             nome TEXT,
+                             pesquisa TEXT,
+                             status INT
+                         );
+                         ''')
+            conn.execute('''
+                         CREATE TABLE IF NOT EXISTS empresas (
+                             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                             nome TEXT NOT NULL,
+                             usuario TEXT NOT NULL,
+                             senha TEXT NOT NULL,
+                             time_wait INT NOT NULL)
+                         ''')
+            conn.commit()
         except Exception as e:
             msg.error("ERROR", F'{e}', 5)
 
